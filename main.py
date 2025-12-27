@@ -20,3 +20,8 @@ def contact():
 @app.get("/help")
 def help():
     return {'message': 'For help, visit our help center at help.example.com'}
+
+
+@app.get("/status" )
+def status():
+    return {'message': 'Server is running successfully'}
