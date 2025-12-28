@@ -39,6 +39,12 @@ def status():
     return {'message': 'Server is running successfully'}
 
 
+@app.get('/view')
+def view():
+    data = load_data()
+    return data    
+
+
 @app.get('/patient/{patient_id}')
 def view_patient(patient_id: str):
     data = load_data()
