@@ -69,5 +69,5 @@ def sort_patients(sort_by: str = Query(..., description='sort on the basis of he
 
     sort_order = True if order == 'desc' else False
     
-    sorted_data = sorted(data.values(), ley = lambda x: x[sort_by] ,reverse= sort_order)
+    sorted_data = sorted(data.values(), key = lambda x: x.get(sort_by,0) ,reverse= sort_order)
     return sorted_data
