@@ -23,11 +23,14 @@ class Patient(BaseModel):
         if domain_name not in valid_domains:
             raise ValueError("Not a valid domain, Email must belong to either hdfc.com or icici.com")
         return value
-    
 
+    @field_validator('age')
+    @classmethod
+    def age_validator(cls, value):
+        if value < 0:
+            raise ValueError("Age cannot be negative")
+        return value
 
-
-    
 @field_validator('name')
 @classmethod
 def transform_name(cls, value):
