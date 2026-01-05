@@ -24,6 +24,9 @@ class Patient(BaseModel):
             raise ValueError('Patients older than 60 must have an emergency contact')
         return model
 
+# function to demonstrate the usage of the Patient model
+# this function takes a Patient instance as input and prints some of its attributes
+# this function can be used to show how the model works and how the validations are applied
 
 
 def update_patient_data(patient: Patient):
