@@ -30,6 +30,14 @@ class Patient(BaseModel):
         if value < 0:
             raise ValueError("Age cannot be negative")
         return value
+    
+
+@field_validator('weight')
+@classmethod
+def weight_validator(cls, value):
+    if value < 0:
+        raise ValueError("Weight cannot be negative")
+    return value
 
 @field_validator('name')
 @classmethod
